@@ -1,0 +1,414 @@
+/**
+ * ÁTTEKINTÉS
+ *
+ * Ez a fájl írja le az oldalt felépítő komponenseket. Onnantól, hogy
+ * milyen a belső elrendezésük, egészen odáig, hogy milyen a szövegük
+ * színe, stb.
+ *
+ * Eddig is láthattad, de itt aztán nagyon erősen érvényesül a BEM
+ * (Block - Element - Modifier) gondolkodás a kódban. Ha ez ismeretlen
+ * számodra, javasoljuk, hogy olvasd el ezt a részt Harry Roberts
+ * CSS guideline-jában: https://cssguidelin.es/#bem-like-naming.
+ */
+
+
+/**
+ * TARTALOMJEGYZÉK
+ *
+ * 1. GOMBOK
+ *
+ * 2. PROFILKÉPEK
+ *
+ * 3. IKONOK
+ *
+ * 4. OLDALSÁV
+ *
+ * 5. FEJLÉC
+ *
+ * 6. BESZÉLGETÉS
+ *
+ * 7. ÜZENETBEVITEL
+ */
+
+
+
+
+
+/*------------------------------------*\
+  #GOMBOK
+\*------------------------------------*/
+
+/**
+ * 1. Eltávolítjuk a bordert, hogy később ne zavarjon be a padding számításainkba.
+ * Plusz egy teli gombon amúgy is felesleges a border. :)
+ *
+ */
+
+.button {
+  display:        inline-block;
+  border:         .125vw solid;
+  border-radius:  24px;
+  text-align:     center;
+}
+
+  .button--primary-solid {
+    border:           0; /* [1] */
+    background-color: #6200ea;
+    color:            #ffffff;
+  }
+
+  .button--primary-solid:visited { color: #ffffff; }
+
+  .button--primary-hollow {
+    border-color:     #6200ea;
+    background-color: transparent;
+    color:            #6200ea;
+  }
+
+  .button--primary-hollow:visited { color: #6200ea; }
+
+
+
+
+
+/*------------------------------------*\
+#PROFILKÉPEK
+\*------------------------------------*/
+
+/**
+ * 1. A blogoldalhoz hasonlóan ez a property oldja meg, hogy a képek az
+ * eredeti arányaiktól függetlenül szépen, összenyomás nélkül jelenjenek
+ * meg a kör alakú keretekben.
+ */
+
+.user-avatar {
+  float:          left;
+  width:          5.5555vh;
+  height:         5.5555vh;
+  border-radius:  50%;
+  margin-right:   .9375vw;
+  object-fit:     cover;
+}
+
+  .user-avatar--in-chat-header {
+    position:     absolute;
+    top:          2.2222vh;
+    left:         71.25vw;
+    width:        4.4444vh;
+    height:       4.4444vh;
+    margin-right: 0;
+  }
+
+  .user-avatar--message-self {
+    position:     absolute;
+    bottom:       1.1111vh;
+    right:        0;
+    margin-right: 0;
+  }
+
+
+
+
+
+/*------------------------------------*\
+#IKONOK
+\*------------------------------------*/
+
+.icon {
+  font-size:  2.2222vh;
+  opacity:    .25;
+}
+
+  .icon--emoji,
+  .icon--attach-file {
+    position: absolute;
+    top:      1.6666vh;
+    right:    5.625vw;
+  }
+
+  .icon--attach-file { right: 8.75vw; }
+
+  .icon--send {
+    opacity: 1;
+  }
+
+
+
+
+
+/*------------------------------------*\
+  #OLDALSÁV
+\*------------------------------------*/
+
+.sidebar {
+  height:           100vh;
+  background-color: #ffffff;
+}
+
+  .sidebar__header {
+    position:       relative;
+    height:         8.7777vh;
+    border-bottom:  .1111vh solid;
+    border-color:   #f4f3f5;
+  }
+
+    .sidebar__search {
+      position:         absolute;
+      top:              1.6666vh;
+      left:             .9375vw;
+      display:          block;
+      width:            20vw;
+      height:           5.5555vh;
+      padding:          1.7777vh 0 1.4444vh 1.5vw;
+      border:           0;
+      border-bottom:    .3333vh solid;
+      border-color:     transparent;
+      margin-bottom:    1.6666vh;
+      background-color: #f4f3f5;
+      outline:          none;
+    }
+
+    .sidebar__search:focus { border-bottom-color: #6200ea; }
+
+    .sidebar__search::placeholder {
+      font-weight: bold;
+      opacity:     .25;
+    }
+
+      .sidebar__search-submit {
+        position:         absolute;
+        top:              1.6666vh;
+        left:             20.9375vw;
+        width:            5.5555vh;
+        height:           5.5555vh;
+        padding:          1.6666vh;
+        border:           none;
+        background-color: #f4f3f5;
+        text-align:       center;
+        cursor:           pointer;
+      }
+
+  .sidebar__contact-list {
+    list-style-type:  none;
+    padding:          0;
+  }
+
+    .contact {
+      padding:              1.6666vh .9375vw 1.6666vh .625vw;
+      border-bottom:        .1111vh solid;
+      border-left:          .3125vw solid;
+      border-bottom-color:  #f4f3f5;
+      border-left-color:    transparent;
+    }
+
+    li.contact:first-child { border-left-color: #6200ea; }
+
+    .contact-card,
+    .contact-card__text         { color: #211138; }
+
+    .contact-card:visited,
+    .contact-card__text:visited { color: #211138; }
+
+    .contact-card__text {
+      margin:         0 0 .5555vh 4.0625vw;
+      white-space:    nowrap;
+      text-overflow:  ellipsis;
+      overflow:       hidden;
+    }
+
+    .contact-card__name {
+      margin-top:     .5555vh;
+      color:          #6200ea;
+      font-size:      1.3333vh;
+      font-weight:    bold;
+      text-transform: uppercase;
+      letter-spacing: .15vw;
+    }
+
+  .sidebar__cta { padding: 1.6666vh; }
+
+    .sidebar__add-new-contact {
+      width:          100%;
+      padding:        1.7777vh 0;
+      font-size:      1.3333vh;
+      font-weight:    bold;
+      text-transform: uppercase;
+      letter-spacing: .15vw;
+    }
+
+
+
+
+
+/*------------------------------------*\
+  #FEJLÉC
+\*------------------------------------*/
+
+/**
+ * 1. A komponens elrendezéséhez a position tulajdonságot választottuk.
+ * A relative containerhez képest pozicionáltuk a logót. Ha szeretnél
+ * többet olvasni erről a technikáról, nézd át a „Minden a helyén” c. modulunkat.
+ *
+ * 2. Ezzel a módszerrel tudsz dolgokat könnyedén középre igazítani.
+ * Itt találsz erről több infót, ha érdekel:
+ * https://www.w3schools.com/howto/howto_css_center-vertical.asp
+*/
+
+.header {
+  position:         relative; /* [1] */
+  height:           8.8888vh;
+  background-color: #6200ea;
+}
+
+  .header__contact-name {
+    position:     absolute;
+    top:          3.3333vh;
+    left:         1.875vw;
+    font-size:    2.2222vh;
+    font-weight:  bold;
+    color:        #ffffff;
+  }
+
+  .header__contact-name:visited { color: #ffffff; }
+
+  .header__logo {
+    position:   absolute; /* [1] */
+    top:        50%; /* [2] */
+    left:       50%; /* [2] */
+    transform:  translate(-50%, -50%); /* [2] */
+    height:     5.5555vh;
+  }
+
+  .header__student-name {
+    position:       absolute;
+    top:            3.7777vh;
+    right:          5vw;
+    color:          #ffffff;
+    font-size:      1.3333vh;
+    font-weight:    bold;
+    text-transform: uppercase;
+    letter-spacing: .15vw;
+  }
+
+  .header__self-information:visited { color: #ffffff; }
+
+
+
+
+
+/*------------------------------------*\
+  #BESZÉLGETÉS
+\*------------------------------------*/
+
+/**
+ * 1. Ha a beszélgetőablak tartalma magasabb lenne magánál az ablaknál, ezzel a paraméterrel
+ * tudnánk beállítani, hogy scrollozni lehessen az ablakban. Ebben a feladatban erre nem lesz
+ * szükség, mert kifér az építendő design az ablakba, de egy éles feladatnál hasznos lehet ez a
+ * tudás.
+ *
+ * 2. Ezzel a beállítással elrejthetjük a sccrollbart a Firefox böngészőben.
+ *
+ * 3. Ezzel a beállítással elrejthetjük a sccrollbart az Internet Explorer és Edge böngészőkben.
+ *
+ * 4. Ezzel a pseudo elemmel elrejthetjük a sccrollbart a Chrome, Safari és Opera böngészőkben.
+ *
+ *
+ */
+
+.chat {
+  height:             75.5555vh;
+  overflow-y:         scroll; /* [1] */
+  scrollbar-width:    none; /* [2] */
+  -ms-overflow-style: none; /* [3] */
+  padding:            4.4444vh 3.75vw 6.6666vh 3.75vw;
+}
+
+.chat::-webkit-scrollbar { display: none; } /* [4] */
+
+  .message { position: relative; }
+
+  .chat__typing-indicator,
+  .message__timestamp {
+    float:          left;
+    margin:         0 0 .5555vh 3.75vw;
+    color:          #b2acba;
+    font-size:      1.3333vh;
+    font-weight:    bold;
+    text-transform: uppercase;
+    letter-spacing: .15vw;
+  }
+
+  small {margin-bottom: .5555vh}
+
+  .message__timestamp--self {
+    float:        right;
+    margin-left:  0;
+    margin-right: 3.75vw;
+  }
+
+  .message__content {
+    max-width:        37.5vw;
+    padding:          2.2222vh 1.25vw;
+    border-radius:    0 15px 15px 15px;
+    margin:           0 0 1.1111vh 3.75vw;
+    background-color: #ffffff;
+    line-height:      2.2222vh;
+  }
+
+  .conversation__message--self {
+    border-radius:    15px 15px 0 15px;
+    margin-left:      0;
+    margin-right:     3.75vw;
+    background-color: #b2acba;
+    color:            #ffffff;
+  }
+
+
+
+
+
+/*------------------------------------*\
+  #ÜZENETBEVITEL
+\*------------------------------------*/
+
+.message-editor {
+  height:           15.5555vh;
+  padding:          2.2222vh 3.75vw 2.2222vh 1.25vw;
+  border-left:      .0625vw solid;
+  border-color:     #f4f3f5;
+  background-color: #ffffff;
+}
+
+  .message-editor__form { position: relative; }
+
+  .message-editor__textarea {
+    position:         absolute;
+    width:            66.25vw;
+    height:           11.1111vh;
+    padding:          2.2222vh 0 1.4444vh 1.5vw;
+    border:           0;
+    border-bottom:    .3333vh solid;
+    border-color:     transparent;
+    margin-bottom:    1.6666vh;
+    background-color: #f4f3f5;
+    outline:          none;
+  }
+
+  .message-editor__textarea:focus { border-bottom-color: #6200ea; }
+
+  .message-editor__textarea::placeholder {
+    font-weight: bold;
+    opacity:     .25;
+  }
+
+  .message-editor__attachment:visited { color: #211138; }
+
+  .message-editor__send-message {
+    position:       absolute;
+    right:          0;
+    margin-right:   0;
+    width:          5.5555vh; /* [] */
+    height:         5.5555vh; /* [] */
+    border-radius:  50%; /* [] */
+    text-align:     center;
+  }
