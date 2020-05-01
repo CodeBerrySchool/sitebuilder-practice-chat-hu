@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Chat Interface</title>
+  <meta name="description" content="User interface of a chat application.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="css/normalize.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+
+  <script src="https://kit.fontawesome.com/c300050d94.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="layout">
+
+
+  <div class="sidebar layout__item--25-percent layout__item--floated-left">
+
+
+    <div class="sidebar__header">
+      <form class="sidebar__search-bar">
+        <input type="text" id="search" placeholder="Search" name="search" class="sidebar__search">
+        <button type="submit" class="sidebar__search-submit"><i class="icon fas fa-search"></i></button>
+      </form>
+    </div>
+
+
+    <ul class="sidebar__contact-list">
+      <li class="contact clearfix">
+        <a href="#" class="contact-card">
+          <img src="assets/user_avatars/user_avatar_01.png" alt="user avatar" class="user-avatar">
+          <h6 class="contact-card__text contact-card__name">Amy Adams</h6>
+          <p class="contact-card__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</p>
+        </a>
+      </li>
+      <li class="contact clearfix">
+        <a href="#" class="contact-card">
+          <img src="assets/user_avatars/user_avatar_02.png" alt="user avatar" class="user-avatar">
+          <h6 class="contact-card__text contact-card__name">Marc</h6>
+          <p class="contact-card__text">Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+        </a>
+      </li>
+      <li class="contact clearfix">
+        <a href="#" class="contact-card">
+          <img src="assets/user_avatars/user_avatar_03.png" alt="user avatar" class="user-avatar">
+          <h6 class="contact-card__text contact-card__name">Jacob</h6>
+        </a>
+      </li>
+      <li class="contact clearfix">
+        <a href="#" class="contact-card">
+          <img src="assets/user_avatars/user_avatar_04.png" alt="user avatar" class="user-avatar">
+          <h6 class="contact-card__text contact-card__name">Chris Smith</h6>
+          <p class="contact-card__text">At vero eos et accusam et justo duo dolores et ea rebum.</p>
+        </a>
+      </li>
+      <li class="contact clearfix">
+        <a href="#" class="contact-card">
+          <img src="assets/user_avatars/user_avatar_05.png" alt="user avatar" class="user-avatar">
+          <h6 class="contact-card__text contact-card__name">Mia Wong</h6>
+          <p class="contact-card__text">Stet clita kasd gubergren.</p>
+        </a>
+      </li>
+      <li class="contact clearfix">
+        <a href="#" class="contact-card">
+          <img src="assets/user_avatars/user_avatar_06.png" alt="user avatar" class="user-avatar">
+          <h6 class="contact-card__text contact-card__name">Jane</h6>
+          <p class="contact-card__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</p>
+        </a>
+      </li>
+    </ul>
+
+
+    <div class="sidebar__cta">
+      <a href="#" class="button button--primary-hollow sidebar__add-new-contact">Add new contact</a>
+    </div>
+
+
+  </div><!-- /.layout__item--25-percent -->
+
+
+
+
+
+  <div class="layout__item--75-percent layout__item--floated-right">
+
+
+    <header class="header">
+      <a href="#" class="header__contact-name">Amy Adams</a>
+      <a href="index.html">
+        <img src="assets/logo_50.svg" alt="site logo" class="header__logo">
+      </a>
+      <a href="#" class="header__self-information">
+        <h6 class="header__student-name">Student Name</h6>
+        <img src="assets/user_avatars/user_avatar_07.png" alt="user avatar" class="user-avatar user-avatar--in-chat-header">
+      </a>
+    </header>
+
+
+
+
+
+    <div class="chat">
+
+
+      <div>
+        <div class="clearfix">
+          <small class="message__timestamp">Amy, 11:37</small>
+        </div>
+        <img src="assets/user_avatars/user_avatar_01.png" alt="user avatar" class="user-avatar">
+        <p class="message__content">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy <br>
+          eirmod tempor invidunt ut labore et dolore magna aliquyam erat. </p>
+        <p class="message__content">At vero eos et accusam et justo duo dolores et ea rebum.</p>
+      </div>
+
+      <div class="message clearfix">
+        <div class="layout__item--floated-right">
+          <div class="clearfix">
+            <small class="message__timestamp message__timestamp--self">11:40</small>
+          </div>
+          <p class="message__content conversation__message--self">Stet clita kasd gubergren, no sea takimata sanctus est Lorem <br>
+            ipsum dolor sit amet.</p>
+          <img src="assets/user_avatars/user_avatar_07.png" alt="user avatar" class="user-avatar user-avatar--message-self">
+        </div>
+      </div>
+
+      <div>
+        <div class="clearfix">
+          <small class="message__timestamp">Amy, 12:04</small>
+        </div>
+        <img src="assets/user_avatars/user_avatar_01.png" alt="user avatar" class="user-avatar">
+        <p class="message__content">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy <br>
+          eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+      </div>
+
+      <div class="message clearfix">
+        <div class="layout__item--floated-right">
+          <div class="clearfix">
+            <small class="message__timestamp message__timestamp--self">12:06</small>
+          </div>
+          <p class="message__content conversation__message--self">At vero eos et accusam et justo duo dolores et ea rebum.</p>
+          <p class="message__content conversation__message--self">Stet clita kasd gubergren.</p>
+          <img src="assets/user_avatars/user_avatar_07.png" alt="user avatar" class="user-avatar user-avatar--message-self">
+        </div>
+      </div>
+
+
+      <small class="chat__typing-indicator">Amy is typing...</small>
+
+
+    </div><!-- /.conversation -->
+
+
+
+
+
+    <div class="message-editor">
+
+
+      <form class="message-editor__form">
+        <textarea id="message" name="message" placeholder="Type your message ..." class="message-editor__textarea"></textarea>
+        <a href="#" class="message-editor__attachment"><i class="icon icon--attach-file fas fa-paperclip"></i></a>
+        <a href="#" class="message-editor__attachment"><i class="icon icon--emoji far fa-smile"></i></a>
+        <button type="submit" class="message-editor__send-message button button--primary-solid">
+          <i class="icon icon--send fas fa-paper-plane"></i>
+        </button>
+      </form>
+
+
+    </div><!-- /.message-editor -->
+
+
+  </div><!-- /.layout__item--75-percent -->
+
+
+</div><!-- /.layout -->
+
+</body>
+</html>

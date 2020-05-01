@@ -1,0 +1,62 @@
+/**
+ * ÁTTEKINTÉS
+ *
+ * Ez a fájl kezeli az oldal elrendezését (layoutját). Ahelyett, hogy egyenként,
+ * a komponensekhez kötjük az elhelyezésüket, készítünk egy külön rendszert,
+ * amelynek semmi más dolga nincs, mint megmondani egyes elemeknek, hogy
+ * mekkorák legyenek, és hol jelenjenek meg.
+ *
+ * Az itt deklarált classokat aztán ráhívhatjuk bármilyen containerre,
+ * hogy az a megfelelő méretet öltse, és a megfelelő módon viselkedjen.
+ */
+
+
+/**
+ * TARTALOMJEGYZÉK
+ *
+ * ELRENDEZÉS
+ * Elemek.................Magukra a containerekre vonatkozó méretszabályok.
+ * Módosítók..............Az elrendezést módosító szabályok, pl. floatok.
+ *
+ * TÉRKÖZÖK
+ * Vízszintes térközök....Containerek közötti vízszintes whitespace szabályai.
+ *
+ * HELPEREK
+ * Clearfix...............Floatolt containerekre hívható class.
+ */
+
+
+
+
+
+/*------------------------------------*\
+  #ELRENDEZÉS
+\*------------------------------------*/
+
+/**
+ * 1. Ha elemeket floatolnod kell, ezek a class-ok a barátaid. Ne feledd a
+ * containerre meghívni a .clearfix class-t a HELPEREK szekcióból.
+ */
+
+.layout__item--75-percent { width: 75%; }
+
+.layout__item--25-percent { width: 25%; }
+
+
+.layout__item--floated-left  { float: left; } /* [2] */
+
+.layout__item--floated-right { float: right; }/* [2] */
+
+
+
+
+
+/*------------------------------------*\
+  #HELPEREK
+\*------------------------------------*/
+
+.clearfix:after {
+  content:  "";
+  display:  table;
+  clear:    both;
+}

@@ -1,1 +1,1 @@
-# sitebuilder-practice-chat-hu
+# wsc-practice-chat
